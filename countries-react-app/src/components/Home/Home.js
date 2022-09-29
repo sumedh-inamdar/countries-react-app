@@ -1,10 +1,17 @@
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import debounce from 'lodash.debounce';
 import Card from "./Card";
 
+function getFilteredCountries(search, countries) {
+    console.log('filter query');
+    if (search === '') return countries;
+    return countries.filter(country => country.name.toLowerCase().includes(search.toLowerCase()));
+}
+
 export default function Home() {
-  const [regions, setRegions] = useState([]);
+  const [search, setSearch] = useState('');
   const [countries, setCountries] = useState([]);
 
   useEffect(() => {
@@ -18,6 +25,12 @@ export default function Home() {
       });
   }, []);
 
+  const filteredCountries = getFilteredCountries(search, countries);
+
+  const updateSearch = e => setSearch(e.target.value);
+
+  const debounceChange = debounce(updateSearch, 500);
+
   return (
     <main className='bg-very-dark-blue max-w-6xl mx-auto px-6 h-full'>
       <div className='flex justify-between py-6'>
@@ -26,6 +39,7 @@ export default function Home() {
           <input
             className='bg-dark-blue px-6 py-2 focus:outline-none'
             type='text'
+            onChange={debounceChange}
             placeholder='Search for a country...'
           />
         </div>
@@ -35,7 +49,7 @@ export default function Home() {
           <option value='test2'>Test2</option>
         </select>
       </div>
-      <div className="grid grid-cols-4">{countries.map((country) => <Card key={country.name} country={country} />)}</div>
+      <div className="grid gap-y-12 grid-cols-4 justify-items-center">{filteredCountries.map((country) => <Card key={country.name} country={country} />)}</div>
     </main>
   );
 }
