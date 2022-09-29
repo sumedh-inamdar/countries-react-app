@@ -4,6 +4,7 @@ Multi-page application that shows different countries and their key data. User c
 
 
 # Things to do
+- [ ] Mock API call and check for proper rendering of country
 
 # Bugs to fix
 - [ ] Align left and right cards on home to rest of page (may change to flex?)
