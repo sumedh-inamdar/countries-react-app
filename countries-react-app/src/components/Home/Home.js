@@ -42,7 +42,7 @@ export default function Home() {
 
   return (
     <main className='max-w-6xl mx-auto px-6'>
-      <div className='flex justify-between py-6'>
+      <div className='flex flex-col space-y-6 md:space-y-0 md:flex-row justify-between py-6'>
         <div className='bg-dark-blue px-6'>
           <FontAwesomeIcon icon={faMagnifyingGlass} />
           <input
@@ -53,7 +53,7 @@ export default function Home() {
           />
         </div>
         <select
-          className='bg-dark-blue text-sm px-6 py-2'
+          className='bg-dark-blue text-sm px-6 py-2 w-min'
           value={region}
           onChange={(e) => setRegion(e.target.value)}
         >
@@ -67,7 +67,7 @@ export default function Home() {
           )}
         </select>
       </div>
-      <div className='grid gap-y-12 grid-cols-4 justify-items-center'>
+      <div className='grid gap-y-12 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 justify-items-center'>
         {filteredCountries.map((country) => (
           <Link key={country.name} to={`/${country.name.toLowerCase()}`}>
             <Card key={country.name} country={country} />

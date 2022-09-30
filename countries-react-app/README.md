@@ -4,7 +4,7 @@ Multi-page application that shows different countries and their key data. User c
 
 
 # Things to do
-- [ ] Mobile view for Homepage
+- [x] Mobile view for Homepage
 - [ ] Mock API call and check for proper rendering of country
 
 # Bugs to fix

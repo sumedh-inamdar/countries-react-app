@@ -2,6 +2,11 @@
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
+    screens: {
+      sm: "500px",
+      md: "700px",
+      lg: "1024px",
+    },
     extend: {
       backgroundColor: {
         "dark-blue": "hsl(209, 23%, 22%)",
