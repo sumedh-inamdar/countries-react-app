@@ -40,7 +40,7 @@ export default function Country() {
         <FontAwesomeIcon icon={faArrowLeftLong} />
         <span className='text-sm font-light'>Back</span>
       </button>
-      <div className='flex'>
+      <div className='flex flex-col md:flex-row'>
         <div className='flex-1'>
           <img
             className='border-8 border-dark-blue rounded-lg'
@@ -49,11 +49,11 @@ export default function Country() {
           />
         </div>
         <div className='flex-1 flex flex-col justify-center'>
-          <div className='ml-16 my-4 text-3xl font-semibold'>
+          <div className='md:ml-16 my-4 text-3xl font-semibold'>
             {countryData.name}
           </div>
-          <div className='ml-16 flex text-sm'>
-            <div>
+          <div className='md:ml-16 flex flex-col md:flex-row text-sm'>
+            <div className="space-y-4 md:space-y-2">
               <div>
                 <span className='font-semibold'>Native Name:</span>{" "}
                 {countryData.nativeName}
@@ -75,7 +75,7 @@ export default function Country() {
                 {countryData.capital}
               </div>
             </div>
-            <div className='ml-8'>
+            <div className='space-y-4 md:space-y-2 mt-8 md:mt-0 md:ml-8'>
               <div>
                 <span className='font-semibold'>Top Level Domain:</span>{" "}
                 {countryData.topLevelDomain?.[0]}
@@ -90,9 +90,9 @@ export default function Country() {
               </div>
             </div>
           </div>
-          <div className='ml-16 mt-6'>
-            Border Countries:{" "}
-            <span className='space-x-2 text-sm'>
+          <div className='md:ml-16 mt-12 flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-2'>
+            <div className="whitespace-nowrap">Border Countries:{" "}</div>
+            <span className='text-sm flex flex-wrap gap-2'>
               {borders.map((border) => (
                 <Link key={border} to={`/${border.toLowerCase()}`}>
                   <button className='px-6 py-1 bg-dark-blue drop-shadow-2xl rounded-md'>
