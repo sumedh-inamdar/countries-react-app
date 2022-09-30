@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import debounce from "lodash.debounce";
@@ -40,7 +41,7 @@ export default function Home() {
   const debounceChange = debounce(updateSearch, 500);
 
   return (
-    <main className='bg-very-dark-blue max-w-6xl mx-auto px-6 h-full'>
+    <main className='max-w-6xl mx-auto px-6'>
       <div className='flex justify-between py-6'>
         <div className='bg-dark-blue px-6'>
           <FontAwesomeIcon icon={faMagnifyingGlass} />
@@ -59,14 +60,18 @@ export default function Home() {
           <option value=''>Filter by Region</option>
           {[...new Set(countries.map((country) => country.region))].map(
             (region) => (
-              <option key={region} value={region.toLowerCase()}>{region}</option>
+              <option key={region} value={region.toLowerCase()}>
+                {region}
+              </option>
             )
           )}
         </select>
       </div>
       <div className='grid gap-y-12 grid-cols-4 justify-items-center'>
         {filteredCountries.map((country) => (
-          <Card key={country.name} country={country} />
+          <Link key={country.name} to={`/${country.name.toLowerCase()}`}>
+            <Card key={country.name} country={country} />
+          </Link>
         ))}
       </div>
     </main>

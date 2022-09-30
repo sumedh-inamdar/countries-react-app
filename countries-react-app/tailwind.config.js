@@ -5,9 +5,12 @@ module.exports = {
     extend: {
       backgroundColor: {
         "dark-blue": "hsl(209, 23%, 22%)",
-        "very-dark-blue": "hsl(207, 26%, 17%)"
-      }
+        "very-dark-blue": "hsl(207, 26%, 17%)",
+      },
+      borderColor: {
+        "dark-blue": "hsl(209, 23%, 22%)",
+      },
     },
   },
   plugins: [],
-}
+};
