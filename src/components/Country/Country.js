@@ -10,7 +10,7 @@ export default function Country() {
   const [borders, setBorders] = useState([]);
 
   useEffect(() => {
-    fetch(`https://restcountries.com/v2/name/${country}`)
+    fetch(`https://restcountries.com/v2/name/${country}?fullText=true`)
       .then((res) => res.json())
       .then((json) => {
         setCountryData(json[0]);
@@ -36,7 +36,10 @@ export default function Country() {
 
   return (
     <div className='max-w-6xl mx-auto px-6'>
-      <button className='px-6 py-1 bg-dark-blue space-x-2 flex justify-center items-center drop-shadow-2xl rounded-md my-12' onClick={() => history(-1)}>
+      <button
+        className='px-6 py-1 bg-dark-blue space-x-2 flex justify-center items-center drop-shadow-2xl rounded-md my-12'
+        onClick={() => history(-1)}
+      >
         <FontAwesomeIcon icon={faArrowLeftLong} />
         <span className='text-sm font-light'>Back</span>
       </button>
@@ -53,7 +56,7 @@ export default function Country() {
             {countryData.name}
           </div>
           <div className='md:ml-16 flex flex-col md:flex-row text-sm'>
-            <div className="space-y-4 md:space-y-2">
+            <div className='space-y-4 md:space-y-2'>
               <div>
                 <span className='font-semibold'>Native Name:</span>{" "}
                 {countryData.nativeName}
@@ -91,7 +94,7 @@ export default function Country() {
             </div>
           </div>
           <div className='md:ml-16 mt-12 flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-2'>
-            <div className="whitespace-nowrap">Border Countries:{" "}</div>
+            <div className='whitespace-nowrap'>Border Countries: </div>
             <span className='text-sm flex flex-wrap gap-2'>
               {borders.map((border) => (
                 <Link key={border} to={`/${border.toLowerCase()}`}>

@@ -24,7 +24,7 @@ export default function Home() {
 
   useEffect(() => {
     fetch(
-      "https://restcountries.com/v2/all?fields=name,population,region,capital,flags"
+      "https://restcountries.com/v2/all?fields=name,nativeName,population,region,capital,flags"
     )
       .then((res) => res.json())
       .then((json) => {
