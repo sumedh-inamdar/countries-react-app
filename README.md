@@ -16,6 +16,6 @@ Country data pulled from REST Countries API (https://restcountries.com/#api-endp
 # Bugs to fix
 - [x] Flag overflow issue on homepage
 - [x] Misdirection to wrong country (e.g. India -> British Indian Ocean Territory)
-- [ ] Flag distortion on Card
+- [x] Flag distortion on Card
 - [ ] Align left and right cards on home to rest of page (may change to flex?)
 
