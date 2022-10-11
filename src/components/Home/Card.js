@@ -1,23 +1,24 @@
 export default function Card({ country }) {
   return (
-    <div className='bg-dark-blue h-72 w-48 flex flex-col'>
-      <div className='flex-1 flex flex-col justify-center'>
+    <li className='bg-dark-blue h-72 w-48 flex flex-col rounded'>
+      <figure className='flex-1 flex flex-col justify-center p-3'>
         <img className='max-h-36' alt='flag' src={country.flags.svg} />
-      </div>
-      <div className='flex-1 pl-4'>
-        <div className='font-bold text-sm my-4'>{country.name}</div>
-        <div className='text-xs space-y-1'>
-          <div>
-            <b>Population:</b> {country.population.toLocaleString("en-US")}
-          </div>
-          <div>
-            <b>Region:</b> {country.region}
-          </div>
-          <div>
-            <b>Capital:</b> {country.capital}
-          </div>
-        </div>
-      </div>
-    </div>
+      </figure>
+      <section className='flex-1 pl-4'>
+        <h2 className='font-extrabold text-sm my-4'>{country.name}</h2>
+        <ul className='text-xs space-y-1'>
+          <li>
+            <span className='font-extrabold'>Population:</span>{" "}
+            {country.population.toLocaleString("en-US")}
+          </li>
+          <li>
+            <span className='font-extrabold'>Region:</span> {country.region}
+          </li>
+          <li>
+            <span className='font-extrabold'>Capital:</span> {country.capital}
+          </li>
+        </ul>
+      </section>
+    </li>
   );
 }

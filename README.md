@@ -8,8 +8,8 @@ Country data pulled from REST Countries API (https://restcountries.com/#api-endp
 # Things to do
 - [x] Mobile view for Homepage
 - [ ] Dark mode / Light mode
-- [ ] Semantic HTML tags
-- [ ] Remove button nested within Link
+- [x] Semantic HTML tags
+- [x] Remove button nested within Link
 - [ ] Mock API call and check for proper rendering of country
 - [ ] General code cleanup / organization
 

@@ -5,15 +5,13 @@ import Country from "./components/Country/Country";
 
 function App() {
   return (
-    <div className='App'>
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/:country' element={<Country />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/:country' element={<Country />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
