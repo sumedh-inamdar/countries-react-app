@@ -6,9 +6,8 @@
 
 @layer base {
   body {
-    @apply bg-very-dark-blue;
+    @apply text-very-dark-blue bg-very-light-gray dark:text-white dark:bg-very-dark-blue;
     margin: 0;
     font-family: "Nunito Sans", sans-serif;
-    color: hsl(0, 0%, 100%);
   }
 }

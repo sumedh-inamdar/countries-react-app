@@ -37,7 +37,7 @@ export default function Country() {
   return (
     <main className='max-w-6xl mx-auto px-6'>
       <button
-        className='px-6 py-1 bg-dark-blue space-x-2 flex justify-center items-center drop-shadow-2xl rounded-md my-12'
+        className='px-6 py-1 bg-white dark:bg-dark-blue space-x-2 flex justify-center items-center drop-shadow-2xl rounded-md my-12'
         onClick={() => history(-1)}
       >
         <FontAwesomeIcon icon={faArrowLeftLong} />
@@ -46,7 +46,7 @@ export default function Country() {
       <div className='flex flex-col md:flex-row'>
         <figure className='flex-1'>
           <img
-            className='border-8 border-dark-blue rounded-lg'
+            className='border-8 border-white dark:border-dark-blue rounded-lg'
             src={countryData.flags?.svg}
             alt='flag'
           />
@@ -98,7 +98,7 @@ export default function Country() {
             <div className='text-sm flex flex-wrap gap-2'>
               {borders.map((border) => (
                 <Link key={border} to={`/${border.toLowerCase()}`}>
-                  <div className='px-6 py-1 bg-dark-blue drop-shadow-2xl rounded-md'>
+                  <div className='px-6 py-1 bg-white dark:bg-dark-blue drop-shadow-2xl rounded-md'>
                     {border}
                   </div>
                 </Link>

@@ -7,7 +7,7 @@ Country data pulled from REST Countries API (https://restcountries.com/#api-endp
 
 # Things to do
 - [x] Mobile view for Homepage
-- [ ] Dark mode / Light mode
+- [x] Dark mode / Light mode
 - [x] Semantic HTML tags
 - [x] Remove button nested within Link
 - [ ] Mock API call and check for proper rendering of country

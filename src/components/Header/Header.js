@@ -1,20 +1,33 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 export default function Header() {
+  const [theme, setTheme] = useState('light');
+
+  useEffect(() => {
+    if (theme === 'light') document.documentElement.classList.remove('dark');
+    else document.documentElement.classList.add('dark');
+  }, [theme]);
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+  }
+
   return (
-    <header className='h-16 bg-dark-blue'>
+    <header className='h-16 bg-white dark:bg-dark-blue'>
       <div className='max-w-6xl flex h-full justify-between items-center mx-auto my-auto px-6'>
         <Link to='/'>
           <h1 className='font-extrabold'>
             Where in the world?
           </h1>
         </Link>
-        <span className='flex items-center space-x-2'>
+        <button className='flex items-center space-x-2' onClick={toggleTheme}>
           <FontAwesomeIcon icon={faMoon} />
-          <span className='text-sm'>Dark Mode</span>
-        </span>
+          <span className='text-sm'>{theme === 'light' ? 'Light' : 'Dark'} Mode</span>
+        </button>
       </div>
     </header>
   );

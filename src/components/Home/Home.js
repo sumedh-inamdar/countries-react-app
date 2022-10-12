@@ -43,17 +43,17 @@ export default function Home() {
   return (
     <main className='max-w-6xl mx-auto px-6'>
       <nav className='flex flex-col space-y-6 md:space-y-0 md:flex-row justify-between py-6'>
-        <div className='bg-dark-blue px-6'>
+        <div className='bg-white dark:bg-dark-blue px-6'>
           <FontAwesomeIcon icon={faMagnifyingGlass} />
           <input
-            className='bg-dark-blue px-6 py-2 focus:outline-none'
+            className='bg-inherit text-dark-gray dark:text-white px-6 py-2 focus:outline-none'
             type='text'
             onChange={debounceChange}
             placeholder='Search for a country...'
           />
         </div>
         <select
-          className='bg-dark-blue text-sm px-6 py-2 w-min'
+          className='bg-white dark:bg-dark-blue text-sm px-6 py-2 w-min'
           value={region}
           onChange={(e) => setRegion(e.target.value)}
         >

@@ -1,6 +1,6 @@
 export default function Card({ country }) {
   return (
-    <li className='bg-dark-blue h-72 w-48 flex flex-col rounded'>
+    <li className='bg-white dark:bg-dark-blue h-72 w-48 flex flex-col rounded'>
       <figure className='flex-1 flex flex-col justify-center p-3'>
         <img className='max-h-36' alt='flag' src={country.flags.svg} />
       </figure>
