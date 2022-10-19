@@ -5,7 +5,7 @@ import Country from "./components/Country/Country";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/countries-react-app'>
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
