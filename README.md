@@ -1,6 +1,6 @@
 # Countries React App
 
--> <a href="https://sumedh-inamdar.github.io/countries-react-app/">link to page</a> <-
+-> <a href="https://sumedh-inamdar.github.io/countries-react-app/" target="_blank">link to page</a> <-
 
 Multi-page application that shows different countries and their key data. User can navigate from home to individual country page, country to nearby country, search for countries, and filter by region.
 
